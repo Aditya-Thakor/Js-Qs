@@ -21,7 +21,8 @@ Output: 2
 `n = 2` since there are 2 numbers, so all numbers are in the range (\[0,2\]). 2 is the missing number in the range since it does not appear in `nums`.
 */
 function findMissingNum(nums){
-    let expectedSum = (nums.length * (nums.length +1))/2 ;
+    let ln = nums.length+1
+    let expectedSum = (ln*(ln+1))/2;
 //    console.log(expectedSum);   
     
     let actualSum=nums.reduce((acc,sum)=>{
@@ -30,8 +31,9 @@ function findMissingNum(nums){
     
     // console.log(actualSum);
     
-    let missing = expectedSum-actualSum;
+    let missing =expectedSum-actualSum ;
 
     console.log(missing);
 }
-findMissingNum([3,0,1])
+findMissingNum([3,4,1])
+findMissingNum([5,1,3,4]) // the array lenght is 4  so we need sum of range of 0 to 4 but we wanna 4 included so that we add +1 in our ln (nums.length+1).
